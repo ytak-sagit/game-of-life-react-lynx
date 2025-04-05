@@ -1,0 +1,34 @@
+{
+  "name": "Game of life - Lynx",
+  "dockerComposeFile": [
+    "../compose.yaml"
+  ],
+  "service": "app",
+  "workspaceFolder": "/app",
+  "remoteUser": "vscode",
+  "updateRemoteUserUID": true,
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "biomejs.biome",
+        "DiemasMichiels.emulate"
+      ],
+      "settings": {
+        "files.autoSave": "off",
+        "editor.detectIndentation": true,
+        "editor.insertSpaces": true,
+        "editor.indentSize": "tabSize",
+        "editor.tabSize": 2,
+        "editor.codeActionsOnSave": {
+          "quickfix.biome": "explicit",
+          "source.organizeImports.biome": "explicit",
+          // NOTE:
+          // biome.json の organizeImports を false へ変更したため、
+          // VSCode の organizeImports 設定を追加しておく
+          "source.organizeImports": "explicit"
+        },
+        "editor.defaultFormatter": "biomejs.biome"
+      }
+    }
+  }
+}
