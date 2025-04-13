@@ -4,10 +4,10 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    working_dir: /app
+    working_dir: /workspace/app
     volumes:
-      - ./app:/app
-      - node_modules:/app/node_modules
+      - .:/workspace
+      - node_modules:/workspace/app/node_modules
     environment:
       TZ: Asia/Tokyo
     tty: true
@@ -15,3 +15,8 @@ services:
 
 volumes:
   node_modules:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${PWD}/app/node_modules
+      o: bind
