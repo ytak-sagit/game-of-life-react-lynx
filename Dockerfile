@@ -7,10 +7,10 @@ RUN set -x \
     && ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
     && echo 'Asia/Tokyo' >/etc/timezone
 
-# Node.js
+# Node.js, Git
 RUN set -x \
     && curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
-    && apt install -y nodejs \
+    && apt install -y nodejs git \
     && apt clean -y \
     && rm -rf /var/lib/apt/lists/*
 
